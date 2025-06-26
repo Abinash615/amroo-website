@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout – AMROO</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+  <header>
+    <h1>🧾 Checkout</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop (<span id="cart-count">0</span>)</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main style="padding: 20px; max-width: 500px; margin: auto;">
+    <h2>Billing Details</h2>
+    <form onsubmit="placeOrder(); return false;">
+      <input type="text" placeholder="Full Name" required><br><br>
+      <input type="text" placeholder="Shipping Address" required><br><br>
+      <input type="text" placeholder="City" required><br><br>
+      <input type="number" placeholder="Pincode" required><br><br>
+      <input type="text" placeholder="Card Number" required><br><br>
+      <button type="submit">Place Order</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Secure checkout - demo only</p>
+  </footer>
+
+  <script>
+    function placeOrder() {
+      alert("Thank you! Your order has been placed. (This is just a demo.)");
+      localStorage.removeItem('cart');
+      window.location.href = "index.html";
+    }
+
+    // Show cart count
+    window.onload = function() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartCountSpan = document.getElementById('cart-count');
+      if (cartCountSpan) cartCountSpan.textContent = cart.length;
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AMROO - Shop</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylee.css">
+   <link rel="stylesheet" href="button.css">
+</head>
+<body>
+  <header>
+    <h1>🛍️ Shop AMROO</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Shop (<span id="cart-count">0</span>)</a>
+       <a href="contact.html">Contact</a>
+       <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main class="product">
+    <div class="product">
+    <img src="images/shirt1.jpg" alt="Shirt 1">
+      <h3>Classic Shirt</h3>
+      <p>₹799</p>
+      <button onclick="alert('Thank you for shopping! (Demo only)')">Buy Now</button>
+      <button onclick="addToCart('Classic Shirt', 799)">Add to Cart</button>
+
+    </div>
+    <div class="product">
+      <img src="images/shirt2.jpg" alt="Shirt 2">
+      <h3>Streetwear Tee</h3>
+      <p>₹599</p>
+      <button onclick="alert('Thank you for shopping! (Demo only)')">Buy Now</button>
+      <button onclick="addToCart('Oversized T-Shirt', 999)">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="images/shirt3.jpg" alt="Shirt 3">
+      <h3>Oversized Hoodie</h3>
+      <p>₹1299</p>
+      <button onclick="alert('Thank you for shopping! (Demo only)')">Buy Now</button>
+      <button onclick="addToCart('Printed Shirt', 899)">Add to Cart</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Contact us at support@amroo.com</p>
+  </footer>
+  <script>
+  function addToCart(productName, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name: productName, price: price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(productName + " added to cart!");
+    updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartDisplay = document.getElementById('cart-count');
+    if (cartDisplay) {
+      cartDisplay.textContent = cart.length;
+    }
+  }
+
+  window.onload = updateCartDisplay;
+</script>
+
+
+</body>
+</html>

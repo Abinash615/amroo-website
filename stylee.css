@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+header {
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.hero {
+  background: #ffe4e1;
+  padding: 40px;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 20px;
+  font-weight: bold;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+/* 📱 Mobile-Friendly Layout */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .product {
+    width: 100% !important;
+    margin: 10px 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  input, textarea, button {
+    width: 100% !important;
+    font-size: 16px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 14px;
+  }
+}
